@@ -13,6 +13,7 @@ services:
       - 8545:8545
       - 8546:8546
       - 8551:8551
+      - 6060:6060
     volumes:
       - ${EXECUTIONDIR:-/data/geth}:/root/.ethereum
     healthcheck:
@@ -37,6 +38,8 @@ services:
       - --txlookuplimit=0
       - --syncmode=snap
       - --metrics
+      - --metrics.addr=0.0.0.0
+      - --metrics.port=6060
 #      - --goerli
 #    logging:
 #      driver: json-file
@@ -70,3 +73,25 @@ services:
       - --grpc-gateway-host=0.0.0.0
       - --grpc-gateway-port=3500
 #      - --prater
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ${PROMETHEUSDIR}:/etc/prometheus
+    ports:
+      - "9090:9090"
+    command: --config.file=/etc/prometheus/prometheus.yml
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_INSTALL_PLUGINS=grafana-piechart-panel
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Viewer
+    volumes:
+      - ${GRAFANADIR}:/var/lib/grafana
+      - ${GRAFANADIR}/etc/grafana:/etc/grafana
