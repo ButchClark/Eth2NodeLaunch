@@ -20,6 +20,8 @@ Currently (being read-only) it runs against mainnet.  Before actually staking, i
 ## Notes:
 Next steps include parameterizing the docker-compose file to allow for different networks (mainnet, goerli, etc.)
 
+Until complexity warrants Dockerfiles, I've kept all config in the docker-compose file.
+
 ## Interesting links
 
 | link | description |
