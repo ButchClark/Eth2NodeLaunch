@@ -93,5 +93,6 @@ services:
       - GF_AUTH_ANONYMOUS_ENABLED=true
       - GF_AUTH_ANONYMOUS_ORG_ROLE=Viewer
     volumes:
-      - ${GRAFANADIR}:/var/lib/grafana
-      - ${GRAFANADIR}/etc/grafana:/etc/grafana
+      - ${GRAFANADASH}:/var/lib/grafana/dashboards
+      - ${GRAFANAPROV}:/etc/grafana/provisioning
+    command: "--config /etc/grafana/grafana.ini"

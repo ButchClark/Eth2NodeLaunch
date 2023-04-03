@@ -32,4 +32,6 @@ Until complexity warrants Dockerfiles, I've kept all config in the docker-compos
 | https://github.com/d3vk0n/goerli-geth | goerli geth |
 | https://github.com/islishude/geth-docker | get-docker |
 | https://github.com/chapsuk/geth-prometheus | geth-prometheus |
+| https://grafana.com/grafana/dashboards/15750-geth-server/ | geth grafana dashboard |
+
 
