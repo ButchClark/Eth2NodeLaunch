@@ -7,6 +7,8 @@ Currently (being read-only) it runs against mainnet.  Before actually staking, i
 - Docker
 
 ## Steps to run
+Note:  I run on a MacBook Pro, so the following probably won't work directly on a Windows machine.
+
 1. Clone this repo
 2. cd into repo directory
 3. Run `./launch.sh`

@@ -28,5 +28,8 @@ else
 	echo "using existing jwt.hex file"
 fi
 
+# Create network for nodes to communicate on
+docker network create nodes
+
 # Kick it
 docker-compose up -d
