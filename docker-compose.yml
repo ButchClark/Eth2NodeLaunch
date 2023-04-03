@@ -96,3 +96,9 @@ services:
       - ${GRAFANADASH}:/var/lib/grafana/dashboards
       - ${GRAFANAPROV}:/etc/grafana/provisioning
     command: "--config /etc/grafana/grafana.ini"
+
+
+networks:
+  nodes:
+    name: nodes
+    external: true

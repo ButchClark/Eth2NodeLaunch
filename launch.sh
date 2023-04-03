@@ -29,7 +29,7 @@ else
 fi
 
 # Create network for nodes to communicate on
-docker network create nodes
+docker network create --attachable nodes
 
 # Kick it
 docker-compose up -d
