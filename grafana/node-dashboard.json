@@ -118,7 +118,7 @@
           "refId": "A"
         }
       ],
-      "title": "Active Peers",
+      "title": "Execution-client Active Peers",
       "type": "timeseries"
     },
     {
@@ -219,7 +219,7 @@
           "refId": "B"
         }
       ],
-      "title": "Panel Title",
+      "title": "Chain Head Finalized",
       "type": "timeseries"
     }
   ],
