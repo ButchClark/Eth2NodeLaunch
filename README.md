@@ -15,12 +15,23 @@ Note:  I run on a MacBook Pro, so the following probably won't work directly on 
 4. Verify the nodes have started properly by running `docker-compose logs -f`
 5. Wait for the nodes to sync
 
+## Monitoring the nodes
+When the docker-compose file executes, it launches both Prometheus and Grafana images.  To access the Grafana instance, go to `http://localhost:3000`
+
+First, log into Grafana.  
+By default, the instance will start with username/password:   Admin / Admin
+
+You will find a pre-configured dashboard named *Execution Node Stats*.  This (presently) show the count of Active Peers for the Execution-client.
+
 ## Shutting things down
 1. Run `docker-compose down`
 2. To reset everything, including deleting any execution and consensus node data, run `./cleanup.sh`
 
 ## Notes:
 Next steps include parameterizing the docker-compose file to allow for different networks (mainnet, goerli, etc.)
+
+### Updating Grafana and Prometheus
+The launch script will copy init scripts and dashboard JSON files to the appropriate directories.  All you need to do is update the files in the {project}/grafana and {project}/prometheus directories before running the launch script.
 
 Until complexity warrants Dockerfiles, I've kept all config in the docker-compose file.
 
