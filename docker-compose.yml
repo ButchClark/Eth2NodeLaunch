@@ -60,11 +60,10 @@ services:
     ports:
       - 4000:4000
       - 3500:3500
+      - 6161:6161
     command:
       - --accept-terms-of-use
       - --datadir=/data
-      - --disable-monitoring
-      - --rpc-host=0.0.0.0
       - --execution-endpoint=http://execution-client:8551
       - --jwt-secret=/geth/jwt.hex
       - --rpc-host=0.0.0.0
@@ -72,6 +71,8 @@ services:
       - --grpc-gateway-corsdomain=*
       - --grpc-gateway-host=0.0.0.0
       - --grpc-gateway-port=3500
+      - --monitoring-host=0.0.0.0
+      - --monitoring-port=6161
 #      - --prater
 
   prometheus:

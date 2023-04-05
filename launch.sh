@@ -18,6 +18,8 @@ mkdir -p $GRAFANAPROV/datasources
 cp ./grafana/*dash*.json $GRAFANADASH
 cp ./grafana/local.yml $GRAFANAPROV/dashboards
 cp ./grafana/datasource.yml $GRAFANAPROV/datasources
+# Copy over Prometheus config file to the prometheus dir
+cp ./prometheus/prometheus.yml $PROMETHEUSDIR
 
 # If we don't already have a JWT file, create one
 if [ ! -f $EXECUTIONDIR/jwt.hex ]

@@ -112,13 +112,13 @@
             "uid": "P1809F7CD0C75ACF3"
           },
           "editorMode": "builder",
-          "expr": "eth_fetcher_block_headers{instance=\"execution-client:6060\"}",
+          "expr": "p2p_peers{instance=\"execution-client:6060\"}",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
         }
       ],
-      "title": "Panel Title",
+      "title": "Active Peers",
       "type": "timeseries"
     },
     {
